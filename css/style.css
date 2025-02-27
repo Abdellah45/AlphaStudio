@@ -1,0 +1,391 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* HTML: <div class="loader"></div> */
+.loader{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 100;
+}
+.loader.loaded{
+    display: none;
+}
+.loader::before {
+    content: "";
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 12px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #000;
+    clip-path: inset(-220%);
+    animation: l28 2s infinite linear;
+  }
+  @keyframes l28 {
+    0%  {box-shadow:0 0 0 0   , 40px 0,-40px 0,0 40px,0 -40px}
+    10% {box-shadow:0 0 0 0   , 12px 0,-40px 0,0 40px,0 -40px}
+    20% {box-shadow:0 0 0 4px , 0px  0,-40px 0,0 40px,0 -40px}
+    30% {box-shadow:0 0 0 4px , 0px  0,-12px 0,0 40px,0 -40px}
+    40% {box-shadow:0 0 0 8px , 0px  0,  0px 0,0 40px,0 -40px}
+    50% {box-shadow:0 0 0 8px , 0px  0,  0px 0,0 12px,0 -40px}
+    60% {box-shadow:0 0 0 12px, 0px  0,  0px 0,0  0px,0 -40px}
+    70% {box-shadow:0 0 0 12px, 0px  0,  0px 0,0  0px,0 -12px}
+    80% {box-shadow:0 0 0 16px, 0px  0,  0px 0,0  0px,0  0px }
+    90%,
+    100%{box-shadow:0 0 0 0   , 40px 0,-40px 0,0 40px,0 -40px}
+  }
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 6px 5px #ccc;
+    padding:0 15px;
+}
+img{
+    width:100px;
+}
+li{
+    list-style-type: none;
+}
+.menu ul{
+    display:flex;
+    height: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+ .menu ul li{
+    padding: 5px 15px;
+    box-shadow: inset 0 0 0 0 #333;
+    transition: .3s ease-in-out;
+
+}
+.menu ul li:hover{
+    box-shadow: inset 100px 0 0 0 #333;
+}
+.menu ul li:hover a{
+    font-style: italic;
+    color:white;
+    transition: .4s ease;
+}
+ .menu ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color:#333
+}
+
+.collab{
+    padding: 10px 15px;
+    background-color: #111;
+    text-align: center;
+    border-radius: 17px;
+    border:2px solid #111;
+    
+}
+.collab:hover {
+    background-color: white;
+    border:2px solid #111;
+    transition: .4s ease;
+}
+.collab:hover a{
+    color:#111;
+}
+.collab a{
+    text-decoration: none;
+    font-size: 20px;
+    color:white;
+}
+/**landing part**/
+/* .landing{
+    position: relative;
+} */
+.landing .rl_land{
+    height: calc(100vh - 105px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/pexels-pixabay-258196.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.landing .rl_land::before{
+    content: "";
+    position: absolute;
+    top:105px;
+    left:0;
+    width: 100%;
+    display: block;
+    z-index: 1;
+    height: calc(100vh - 105px);
+    background-color: rgb(0, 0, 0,0.3);
+}
+.landing .rl_land .content{
+    width : 700px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    letter-spacing: 1.4px;
+    line-height: 1.5;
+}
+/*work section*/
+.work{
+    padding-bottom: 20px;
+}
+.container{
+    width:900px;
+    margin: 0 auto;
+    padding: 5px 10px;
+}
+.title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 27px;
+    color: #333;
+    margin: 40px 0;
+}
+
+.work .container .work-intro{
+    margin: 20px auto;
+    padding: 15px 10px;
+    border-left: 5px solid #333;
+}
+.work .container .work-intro p{
+    padding: 10px 15px;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+.work .container .slide_work{
+    position: relative;
+    height: 600px;
+    background-color:#ccc;
+    border-radius: 5px;
+    border:1px solid #aaa;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+.work .container .slide_work .img_cont{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 600px;
+    min-width: 100%;
+    display: flex;
+    transition: .3s;
+}
+.work .container .slide_work .img_cont .d{
+    position: relative;
+    height: 100%;
+    width: 900px;
+    overflow: hidden;
+}
+.work .container .slide_work img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    min-width:100%;
+    min-height: 100%;
+    /* object-fit: cover; */
+}
+.work .container .slide_work .holder{
+    padding: 10px 15px;
+    position: relative;
+    bottom: -100%;
+    background-color: rgb(0, 0, 0,0.6);
+    height: fit-content;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    transition: .5s;
+}
+.work .container .slide_work:hover .holder{
+    bottom: 0;
+}
+.work .holder .pre,.work .holder .ne{
+    padding: 10px 15px;
+    background-color: #0D6EFD;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+.work .holder .pre:hover,.work .holder .ne:hover{
+    background-color: #2C3E50;
+    transition: .3s;
+}
+.work .holder .limit{
+    pointer-events: none;
+    opacity: 0.6;
+}
+.work .container .slide_work .holder .dots{
+    display: flex;
+    align-items: center;
+}
+.work .container .slide_work .holder .dots span{
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0,0.2);
+    cursor: pointer;
+}
+.work .container .slide_work .holder .dots span.active{
+    background-color: #0D6EFD;
+    pointer-events: none;
+}
+
+/* services */
+.services{
+    background:linear-gradient(to bottom,#87CEEB, #d4e2fd);
+}
+.services .holder{
+    padding: 40px 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.services .holder .card{
+    background-color: #fff;
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: #ddd 1px 1px 5px;
+    margin-top: 20px;
+    padding:5px 20px 40px 20px;
+}
+
+.services .holder .card .logo_head{
+    padding-top: 30px;
+    padding-left: 10px;
+}
+.services .holder .card .logo_head i{
+    font-size: 30px;
+}
+.services .holder .card .content p{
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+.services .holder .card .content{
+    padding: 10px 10px;
+}
+
+
+
+
+.contact{
+    padding: 50px 10px;
+}
+ .contact h1{
+    text-align: center;
+    font-weight: 600;
+    font-size: 27px;
+    color: #333;
+    margin: 40px 0;
+ }
+ .contact form{
+    margin:10px auto;
+    width: 650px;
+ }
+
+ .contact input{
+    border:0;
+    border-bottom: 3px solid #333;
+    padding: 20px 10px;
+    display: block;
+    margin-top: 30px;
+ }
+ .contact input::placeholder{
+    font-weight: 600;
+    color: #999;
+ }
+ .contact input:focus{
+    outline: 0;
+ }
+.contact .hold_inp{
+    width:650px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+.contact input[name="message"]{
+    width:650px;
+}
+.contact input[name="Name"]{
+    width:200px;
+}
+.contact input[name="email"]{
+    width:400px;
+    margin-left: 10px;
+}
+.contact button{
+    border:0;
+    padding: 15px 10px;
+    margin-top: 50px;
+    display: block;
+    cursor: pointer;
+    background-color: #333;
+    color:white;
+    font-weight: 600;
+}
+
+
+footer{
+    background-color: #1f1f1f;
+    padding: 30px 5px;
+}
+footer .container{
+    display: flex;
+    justify-content: space-between;
+}
+footer .container .about h1{
+    color: white;
+}
+footer .container .about span{
+    color: #fff;
+}
+footer .container .about p{
+    width: 60%;
+    color: #fff;
+    letter-spacing: 1.3px;
+    line-height: 1.5;
+}
+footer .container .social{
+    padding: 20px 5px;
+}
+footer .container .social div:not(.media){
+    margin-top: 30px;
+    font-weight: 600;
+    color: #00AEEF;
+    position: relative;
+}
+footer .container .social div:not(.media)::before{
+    content: attr(data-con);
+    color: white;
+    position: absolute;
+    left: -100px;
+}
+footer .container .social .media{
+    margin-top: 30px;
+    font-size: 30px;
+}
+footer .container .social .media a{
+    color:#999;
+    margin-left: 3px;
+}
